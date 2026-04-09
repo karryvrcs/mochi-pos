@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="lang-zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" id="metaDesc" content="摆摊记账是面向零售、餐饮与摊位的离线收银与经营管理工具。" />
+  <title>摆摊记账</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="icon.webp" type="image/webp" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img src="icon.webp" alt="" class="brand-icon" width="40" height="40" />
+        <span class="brand-text">
+          <span data-lang="zh">摆摊记账</span>
+          <span data-lang="en">Mochi POS</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#intro" data-lang="zh">产品介绍</a>
+        <a href="#intro" data-lang="en">Product</a>
+        <a href="#highlights" data-lang="zh">核心亮点</a>
+        <a href="#highlights" data-lang="en">Highlights</a>
+        <a href="#faq" data-lang="zh">常见问题</a>
+        <a href="#faq" data-lang="en">FAQ</a>
+        <a href="#contact" data-lang="zh">联系</a>
+        <a href="#contact" data-lang="en">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="切换语言">
+          <span data-lang="zh">EN</span>
+          <span data-lang="en">中文</span>
+        </button>
+        <a class="btn btn-primary header-cta" href="#download" data-lang="zh">下载 App</a>
+        <a class="btn btn-primary header-cta" href="#download" data-lang="en">Get the App</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-lang="zh">离线优先 · 专为摊位与门店</p>
+          <p class="eyebrow" data-lang="en">Offline-first · Built for stalls & shops</p>
+          <h1 class="hero-title">
+            <span data-lang="zh">摆摊记账</span>
+            <span data-lang="en">Mochi POS</span>
+          </h1>
+          <p class="hero-lead" data-lang="zh">
+            专为零售、餐饮及各类摊位设计的收银和经营管理工具。无需联网，即可自动计算总价与找零，支持满减、买赠等多种促销规则。无论是零售小店、繁忙餐厅，还是夜市与展会，都能带来丝滑、高效的收银体验。
+          </p>
+          <p class="hero-lead" data-lang="en">
+            A versatile point-of-sale and business management tool for small shops, dining, and pop-up stalls. Works entirely offline with automatic totals, change, and complex promotions—so you can sell faster at the shop, restaurant, or night market.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-lg pulse-soft" href="#download" data-lang="zh">App Store 下载</a>
+            <a class="btn btn-primary btn-lg pulse-soft" href="#download" data-lang="en">Download on App Store</a>
+            <a class="btn btn-ghost btn-lg" href="#intro" data-lang="zh">了解功能</a>
+            <a class="btn btn-ghost btn-lg" href="#intro" data-lang="en">Explore features</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal is-ipad" id="heroVisual" data-delay="120">
+          <div class="device-switch" role="group" aria-label="预览设备">
+            <button type="button" class="device-btn is-active" data-device="ipad" aria-pressed="true">
+              <span data-lang="zh">iPad</span>
+              <span data-lang="en">iPad</span>
+            </button>
+            <button type="button" class="device-btn" data-device="iphone" aria-pressed="false">
+              <span data-lang="zh">iPhone</span>
+              <span data-lang="en">iPhone</span>
+            </button>
+          </div>
+          <div class="device-frame">
+            <img
+              id="heroShot"
+              src="images/Chinesesim/iPad  13/01.jpg"
+              alt=""
+              class="device-screen"
+            />
+          </div>
+          <div class="hero-orbit" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro" class="section">
+      <div class="wrap">
+        <h2 class="section-title reveal" data-lang="zh">产品与场景</h2>
+        <h2 class="section-title reveal" data-lang="en">Product &amp; use cases</h2>
+        <p class="section-lead reveal" data-lang="zh">
+          从点选结算到经营分析，从商品库到会员与促销，一套 App 覆盖日常售卖与复盘；数据保存在本机，并可选用 iCloud 在多设备间同步备份。
+        </p>
+        <p class="section-lead reveal" data-lang="en">
+          From checkout to analytics, inventory to loyalty—one app for day-to-day selling and review. Data stays on-device, with optional iCloud sync across your devices.
+        </p>
+        <div class="intro-device-wrap reveal">
+          <div class="device-switch device-switch--intro" role="group" aria-label="预览设备">
+            <button type="button" class="device-btn is-active" data-device="ipad" aria-pressed="true">
+              <span data-lang="zh">iPad</span>
+              <span data-lang="en">iPad</span>
+            </button>
+            <button type="button" class="device-btn" data-device="iphone" aria-pressed="false">
+              <span data-lang="zh">iPhone</span>
+              <span data-lang="en">iPhone</span>
+            </button>
+          </div>
+        </div>
+        <div class="shots-row reveal is-ipad" id="introShots">
+          <figure class="shot-card">
+            <img src="images/Chinesesim/iPad  13/02.jpg" alt="" class="shot-img" data-file="02" />
+          </figure>
+          <figure class="shot-card">
+            <img src="images/Chinesesim/iPad  13/03.jpg" alt="" class="shot-img" data-file="03" />
+          </figure>
+          <figure class="shot-card">
+            <img src="images/Chinesesim/iPad  13/04.jpg" alt="" class="shot-img" data-file="04" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights" class="section section-tight">
+      <div class="wrap">
+        <h2 class="section-title reveal" data-lang="zh">核心亮点</h2>
+        <h2 class="section-title reveal" data-lang="en">Core highlights</h2>
+        <ul class="highlight-grid">
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">⚡</span>
+            <h3 data-lang="zh">极简收银</h3>
+            <h3 data-lang="en">Minimalist checkout</h3>
+            <p data-lang="zh">点选、扫码、多规格自动计价，极速收银，告别排队。</p>
+            <p data-lang="en">Tap-to-select, barcode scanning, and automatic pricing for variations—faster lines.</p>
+          </li>
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">📊</span>
+            <h3 data-lang="zh">经营看板</h3>
+            <h3 data-lang="en">Business insights</h3>
+            <p data-lang="zh">内置强大的统计报表，深度洞察销售趋势。</p>
+            <p data-lang="en">Built-in analytics and reports for deep sales trends.</p>
+          </li>
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">🖨</span>
+            <h3 data-lang="zh">小票打印</h3>
+            <h3 data-lang="en">Receipt printing</h3>
+            <p data-lang="zh">蓝牙小票机打印，支持自定义小票样式。</p>
+            <p data-lang="en">Bluetooth printers with customizable receipt layouts.</p>
+          </li>
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">🔒</span>
+            <h3 data-lang="zh">隐私安全</h3>
+            <h3 data-lang="en">Privacy &amp; security</h3>
+            <p data-lang="zh">数据离线保存，无需注册登录；支持 iCloud 备份与多设备同步。</p>
+            <p data-lang="en">Offline data, no login required; iCloud backup &amp; multi-device sync.</p>
+          </li>
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">📦</span>
+            <h3 data-lang="zh">商品管理</h3>
+            <h3 data-lang="en">Product management</h3>
+            <p data-lang="zh">分组、条码、多规格；库存管理与批量导入，录入更高效。</p>
+            <p data-lang="en">Categories, barcodes, variants; inventory &amp; bulk import.</p>
+          </li>
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">🏷</span>
+            <h3 data-lang="zh">促销活动</h3>
+            <h3 data-lang="en">Promotions</h3>
+            <p data-lang="zh">满减、打折等多种规则，系统自动计算优惠价。</p>
+            <p data-lang="en">Flat discounts, percentages, tiers—calculated at checkout.</p>
+          </li>
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">％</span>
+            <h3 data-lang="zh">税率设置</h3>
+            <h3 data-lang="en">Tax configuration</h3>
+            <p data-lang="zh">全局税率与单品税率，适配不同行业与地区。</p>
+            <p data-lang="en">Global or item-specific tax rates for regional compliance.</p>
+          </li>
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">⬇</span>
+            <h3 data-lang="zh">数据导出</h3>
+            <h3 data-lang="en">Data export</h3>
+            <p data-lang="zh">导出 CSV，财务对账更轻松。</p>
+            <p data-lang="en">Export to CSV for auditing and bookkeeping.</p>
+          </li>
+          <li class="highlight-card reveal">
+            <span class="hi-icon" aria-hidden="true">👤</span>
+            <h3 data-lang="zh">客户管理</h3>
+            <h3 data-lang="en">Customer management</h3>
+            <p data-lang="zh">客户档案、会员等级与积分规则自定义。</p>
+            <p data-lang="en">Profiles, membership tiers, and loyalty point rules.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="wrap narrow">
+        <h2 class="section-title reveal" data-lang="zh">常见问题</h2>
+        <h2 class="section-title reveal" data-lang="en">FAQ</h2>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>
+              <span data-lang="zh">必须联网才能收银吗？</span>
+              <span data-lang="en">Do I need the internet to check out?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">不需要。核心收银、计价、找零与促销计算均可在完全离线下完成，适合网络不稳定或户外的摊位与门店。</p>
+              <p data-lang="en">No. Core checkout, pricing, change, and promotions work fully offline—ideal for stalls and weak connectivity.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>
+              <span data-lang="zh">我的数据存储在哪里？会丢失吗？</span>
+              <span data-lang="en">Where is my data stored? Could I lose it?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">数据默认保存在本机。建议开启 iCloud 备份以便换机或多设备同步；仍请定期导出 CSV 作为额外备份，尤其在重要大促前。</p>
+              <p data-lang="en">Data stays on your device by default. Enable iCloud backup for new devices and sync; exporting CSV regularly adds an extra safety net.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>
+              <span data-lang="zh">支持哪些小票打印机？</span>
+              <span data-lang="en">Which receipt printers are supported?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">支持通过蓝牙连接的常见热敏小票机（具体型号以 App 内说明与实测为准）。小票版式可在应用内自定义。</p>
+              <p data-lang="en">Common Bluetooth thermal receipt printers are supported (see in-app guidance). Layouts are customizable inside the app.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>
+              <span data-lang="zh">可以在 iPhone 和 iPad 上同时使用吗？</span>
+              <span data-lang="en">Can I use it on both iPhone and iPad?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">可以。搭配同一 Apple ID 的 iCloud 能力，可在多设备间同步与备份（以系统与 App 实际选项为准）。</p>
+              <p data-lang="en">Yes. With the same Apple ID, iCloud can sync and back up across devices (per system and in-app settings).</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>
+              <span data-lang="zh">促销规则复杂时，价格算错怎么办？</span>
+              <span data-lang="en">What if promotions make pricing confusing?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">结账界面会按您配置的规则自动汇总优惠；建议在正式营业前用测试订单走一遍流程，并善用导出记录与报表核对。</p>
+              <p data-lang="en">The cart applies your configured rules automatically. Run test orders before going live, then verify with exports and reports.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>
+              <span data-lang="zh">如何联系官方支持？</span>
+              <span data-lang="en">How do I contact support?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">请发送邮件至 <a href="mailto:support@tutoorapp.com">support@tutoorapp.com</a>，我们会尽快回复。</p>
+              <p data-lang="en">Email <a href="mailto:support@tutoorapp.com">support@tutoorapp.com</a> and we’ll get back to you as soon as we can.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section section-cta">
+      <div class="wrap cta-inner reveal">
+        <h2 data-lang="zh">在 App Store 获取摆摊记账</h2>
+        <h2 data-lang="en">Get Mochi POS on the App Store</h2>
+        <p class="cta-note" data-lang="zh">若链接暂未上架，请稍后在 App Store 搜索「摆摊记账」。</p>
+        <p class="cta-note" data-lang="en">If the link isn’t live yet, search “Mochi POS” on the App Store.</p>
+        <a class="btn btn-primary btn-lg app-store-badge" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 1.98-3.03 1.98-1.29 0-1.88-1.16-3.5-1.16-1.64 0-2.22 1.16-3.5 1.16-1.32 0-2.22-.74-3.05-1.98-2.45-3.66-2.05-8.47.68-10.85 1.11-.96 2.45-1.53 3.73-1.53 1.33 0 2.44.64 3.44.64 1.01 0 2.05-.78 3.28-.78.58.01 2.72.31 4.15 2.02-3.57 1.96-2.99 6.85.42 8.5zM15.37 4.5c.64-.82 1.09-1.99 0.97-3.15-1.06.06-2.33.75-3.03 1.6-.65.76-1.2 1.98-1.04 3.1 1.16.05 2.32-.74 3.1-1.55z"/></svg>
+          <span data-lang="zh">前往 App Store</span>
+          <span data-lang="en">Open App Store</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-footer-contact">
+      <div class="wrap narrow reveal">
+        <h2 class="section-title" data-lang="zh">联系我们</h2>
+        <h2 class="section-title" data-lang="en">Contact</h2>
+        <p>
+          <a class="mailto" href="mailto:support@tutoorapp.com">support@tutoorapp.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-brand">
+        <span data-lang="zh">摆摊记账</span>
+        <span data-lang="en">Mochi POS</span>
+      </p>
+      <p class="muted">&copy; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
