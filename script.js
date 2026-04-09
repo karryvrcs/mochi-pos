@@ -8,7 +8,7 @@
     "Mochi POS is an offline-first point-of-sale and business management app for shops, dining, and stalls.";
 
   /** @type {"zh" | "en"} */
-  let currentLang = "zh";
+  let currentLang = "en";
   /** @type {"iphone" | "ipad"} */
   let currentDevice = "ipad";
 
@@ -77,21 +77,11 @@
     } catch (_) {}
   }
 
-  let initial = "zh";
-  let hadStored = false;
+  let initial = "en";
   try {
     const saved = localStorage.getItem(storageKey);
-    if (saved === "en" || saved === "zh") {
-      initial = saved;
-      hadStored = true;
-    }
+    if (saved === "en" || saved === "zh") initial = saved;
   } catch (_) {}
-
-  const browserPrefersEn =
-    typeof navigator !== "undefined" &&
-    navigator.language &&
-    !String(navigator.language).toLowerCase().startsWith("zh");
-  if (!hadStored && browserPrefersEn) initial = "en";
 
   try {
     const d = localStorage.getItem(deviceKey);
