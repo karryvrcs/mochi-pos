@@ -67,6 +67,16 @@
             <span data-lang="zh">无法加载教程内容。请用 HTTP 访问本站（例如部署到 GitHub Pages 后通过站点地址打开，或本地运行 <code>python3 -m http.server</code>）。<code>file://</code> 直接打开时浏览器会禁止读取本地文件。</span>
             <span data-lang="en">Could not load the documentation. Open this site over HTTP (e.g. your GitHub Pages URL, or <code>python3 -m http.server</code> locally). Opening the HTML file directly as <code>file://</code> blocks loading.</span>
           </p>
+          <div id="docGlobalDevice" class="doc-global-device" hidden>
+            <p class="doc-global-device-label">
+              <span data-lang="zh">截图预览</span>
+              <span data-lang="en">Screenshots</span>
+            </p>
+            <div class="device-switch doc-device-switch" role="group" aria-label="Screenshot device">
+              <button type="button" class="device-btn is-active" data-device="ipad" aria-pressed="true">iPad / Mac</button>
+              <button type="button" class="device-btn" data-device="iphone" aria-pressed="false">iPhone</button>
+            </div>
+          </div>
           <article id="docContent" class="doc-content doc-prose" hidden></article>
         </div>
       </div>

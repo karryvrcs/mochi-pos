@@ -34,15 +34,6 @@
     } catch (_) {}
   }
 
-  function bindDocDeviceButtons(container) {
-    container.querySelectorAll(".doc-device-switch .device-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const d = btn.getAttribute("data-device");
-        if (d === "iphone" || d === "ipad") setDevice(d);
-      });
-    });
-  }
-
   /** @type {(() => void) | null} */
   let tocScrollCleanup = null;
 
@@ -153,15 +144,19 @@
           ? (md) => window.marked.parse(md)
           : null;
 
+    const globalDev = document.getElementById("docGlobalDevice");
+
     if (!content || !parser) {
       if (errEl) errEl.hidden = false;
       if (loading) loading.hidden = true;
+      if (globalDev) globalDev.hidden = true;
       return;
     }
 
     if (loading) loading.hidden = false;
     if (errEl) errEl.hidden = true;
     content.hidden = true;
+    if (globalDev) globalDev.hidden = true;
     const tocNav = document.getElementById("docToc");
     if (tocNav) tocNav.hidden = true;
 
@@ -172,13 +167,14 @@
       content.innerHTML = parser(md);
       content.hidden = false;
       if (loading) loading.hidden = true;
+      if (globalDev) globalDev.hidden = false;
       buildToc(content);
       setupTocScrollSpy(content);
       applyDocDevice();
-      bindDocDeviceButtons(content);
     } catch (_) {
       if (loading) loading.hidden = true;
       if (errEl) errEl.hidden = false;
+      if (globalDev) globalDev.hidden = true;
     }
   }
 
@@ -243,4 +239,11 @@
   } else {
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
+
+  document.querySelectorAll("#docGlobalDevice .doc-device-switch .device-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const d = btn.getAttribute("data-device");
+      if (d === "iphone" || d === "ipad") setDevice(d);
+    });
+  });
 })();

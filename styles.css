@@ -874,12 +874,31 @@ html.lang-zh [data-lang="en"] {
   font-weight: 600;
 }
 
-.doc-screenshot {
-  margin: 1.25rem 0 2rem;
+.doc-global-device {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #f8fafc;
 }
 
-.doc-screenshot .doc-device-switch {
-  margin-bottom: 0.85rem;
+.doc-global-device-label {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.doc-global-device .device-switch {
+  margin-bottom: 0;
+}
+
+.doc-screenshot {
+  margin: 1.25rem 0 2rem;
 }
 
 .doc-screenshot-frame {
@@ -912,8 +931,8 @@ html.lang-zh [data-lang="en"] {
 }
 
 .doc-screenshot-frame.is-iphone .doc-shot--iphone {
-  width: 86%;
-  max-width: 420px;
+  width: 68%;
+  max-width: 280px;
   margin-left: auto;
   margin-right: auto;
 }
