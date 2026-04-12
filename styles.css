@@ -664,242 +664,196 @@ html.lang-zh [data-lang="en"] {
   margin: 0.35rem 0;
 }
 
-/* Documentation page */
-.doc-page .doc-main {
-  padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(3rem, 8vw, 5rem);
+/* Documentation */
+.doc-page .nav a.nav-current {
+  color: var(--accent);
+  opacity: 1;
+  font-weight: 600;
+}
+
+.doc-main {
+  padding-top: clamp(1.5rem, 4vw, 2.5rem);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+  min-height: 60vh;
+}
+
+.doc-back {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.doc-back a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.doc-back a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.doc-wrap {
+  width: min(800px, 100% - 40px);
+}
+
+.doc-wrap-wide {
+  width: min(1120px, 100% - 40px);
 }
 
 .doc-layout {
   display: grid;
-  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 2.75rem);
+  gap: 1.75rem 2.25rem;
+  grid-template-columns: 1fr;
   align-items: start;
-  width: min(1120px, 100% - 40px);
-  margin-inline: auto;
 }
 
-.doc-sidebar {
-  position: sticky;
-  top: calc(var(--header-h) + 1rem);
-}
-
-.doc-toc {
-  margin: 0;
-  padding: 1.1rem 1rem 1.15rem;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
-}
-
-.doc-toc-title {
-  margin: 0 0 0.85rem;
-  padding-bottom: 0.65rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #94a3b8;
-}
-
-.doc-toc-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.doc-toc-item a {
-  display: block;
-  padding: 0.5rem 0.65rem;
-  margin: 0;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #64748b;
-  text-decoration: none;
-  border-left: 2px solid transparent;
-  padding-left: calc(0.65rem - 2px);
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
-}
-
-.doc-toc-item a:hover {
-  color: #334155;
-  background: #f8fafc;
-}
-
-.doc-toc-item a.is-active {
-  color: var(--accent);
-  font-weight: 600;
-  background: #f8fafc;
-  border-left-color: var(--accent);
-}
-
-.doc-toc-h3 a {
-  padding-left: 1.1rem;
-  font-size: 0.86rem;
-  font-weight: 400;
-}
-
-.doc-content {
-  min-width: 0;
-  max-width: 760px;
-}
-
-@media (max-width: 900px) {
-  .doc-layout {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .doc-sidebar {
-    position: relative;
-    top: auto;
-    max-height: none;
-    overflow: visible;
+@media (max-width: 899px) {
+  .doc-body {
+    order: 1;
   }
 
   .doc-toc {
-    padding: 0.9rem 1rem;
-    border-radius: 12px;
-  }
-
-  .doc-toc-title {
-    border-bottom-color: rgba(0, 0, 0, 0.05);
-    margin-bottom: 0.65rem;
-    padding-bottom: 0.55rem;
-  }
-
-  .doc-toc-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding-bottom: 2px;
-  }
-
-  .doc-toc-item {
-    flex: 0 0 auto;
-  }
-
-  .doc-toc-item a {
-    border-left: none;
-    border-bottom: 2px solid transparent;
-    padding: 0.45rem 0.65rem;
-    margin: 0;
-    white-space: nowrap;
-    font-size: 0.85rem;
-    color: #64748b;
-    background: transparent;
-  }
-
-  .doc-toc-item a:hover {
-    background: #f8fafc;
-    color: #334155;
-  }
-
-  .doc-toc-item a.is-active {
-    border-bottom-color: var(--accent);
-    border-left-color: transparent;
-    background: #ffffff;
-    color: var(--accent);
-  }
-
-  .doc-toc-h3 a {
-    padding-left: 0.65rem;
+    order: 2;
   }
 }
 
-.doc-header {
-  margin-bottom: 2rem;
-  text-align: center;
+@media (min-width: 900px) {
+  .doc-layout {
+    grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+  }
+
+  .doc-toc {
+    position: sticky;
+    top: calc(var(--header-h) + 1rem);
+    max-height: calc(100vh - var(--header-h) - 2rem);
+    overflow: auto;
+  }
 }
 
-.doc-title {
-  font-size: clamp(1.85rem, 4vw, 2.35rem);
+.doc-toc {
+  padding: 1rem 1.1rem 1.15rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.doc-toc-title {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  margin: 0 0 0.75rem;
-}
-
-.doc-toolbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.65rem;
-  margin-top: 1.5rem;
-}
-
-.doc-toolbar-label {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text-muted);
 }
 
+.doc-toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.doc-toc-item {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.doc-toc-item + .doc-toc-item {
+  margin-top: 0.5rem;
+}
+
+.doc-toc-item--sub {
+  margin-top: 0.35rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid rgba(37, 99, 235, 0.2);
+  font-size: 0.86rem;
+}
+
+.doc-toc-item a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+}
+
+.doc-toc-item a:hover {
+  color: var(--accent);
+}
+
+.doc-body {
+  min-width: 0;
+}
+
+.doc-loading {
+  color: var(--text-muted);
+  padding: 2rem 0;
+}
+
+.doc-error {
+  color: #b45309;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  line-height: 1.55;
+}
+
+.doc-error code {
+  font-size: 0.88em;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+}
+
 .doc-prose {
-  font-size: 1.02rem;
-  line-height: 1.75;
   color: var(--text);
 }
 
-html.lang-en .doc-page .doc-prose {
-  font-family: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
-}
-
-.doc-prose > *:first-child {
-  margin-top: 0;
+.doc-prose h1 {
+  font-size: clamp(1.85rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+  line-height: 1.2;
 }
 
 .doc-prose h2 {
-  font-size: 1.45rem;
+  font-size: clamp(1.35rem, 2.8vw, 1.55rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
   margin: 2.25rem 0 0.85rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--border);
-  scroll-margin-top: calc(var(--header-h) + 12px);
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  line-height: 1.3;
+  scroll-margin-top: calc(var(--header-h) + 0.75rem);
 }
 
-.doc-prose h2:first-child {
+.doc-prose h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
   margin-top: 0;
-  border-bottom: none;
-  padding-bottom: 0;
 }
 
 .doc-prose h3 {
   font-size: 1.15rem;
   font-weight: 600;
   margin: 1.75rem 0 0.65rem;
-  scroll-margin-top: calc(var(--header-h) + 12px);
+  line-height: 1.35;
+  scroll-margin-top: calc(var(--header-h) + 0.75rem);
 }
 
 .doc-prose p {
   margin: 0 0 1rem;
   color: var(--text-muted);
+  max-width: 65ch;
 }
 
 .doc-prose hr {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 2rem 0;
-}
-
-.doc-prose img {
-  display: block;
-  width: 100%;
-  max-width: min(380px, 100%);
-  height: auto;
-  margin: 1rem auto;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-
-body.doc-device-ipad .doc-prose img {
-  max-width: min(500px, 100%);
+  margin: 1.75rem 0;
 }
 
 .doc-prose strong {
@@ -907,24 +861,36 @@ body.doc-device-ipad .doc-prose img {
   font-weight: 600;
 }
 
-.doc-loading {
-  text-align: center;
-  color: var(--text-muted);
-  margin: 2rem 0;
+.doc-screenshot {
+  margin: 1.25rem 0 2rem;
 }
 
-.doc-error {
-  color: #b91c1c;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+.doc-screenshot .doc-device-switch {
+  margin-bottom: 0.85rem;
+}
+
+.doc-screenshot-frame {
   border-radius: var(--radius);
-  padding: 1rem 1.15rem;
-  margin: 0;
-  line-height: 1.55;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  background: #f8fafc;
 }
 
-.doc-error-en {
+.doc-screenshot-frame .doc-shot {
+  width: 100%;
+  height: auto;
   display: block;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
+}
+
+.doc-screenshot-frame.is-ipad .doc-shot--iphone {
+  display: none !important;
+}
+
+.doc-screenshot-frame.is-iphone .doc-shot--ipad {
+  display: none !important;
+}
+
+html.lang-en .doc-page {
+  font-family: "DM Sans", "Noto Sans SC", system-ui, -apple-system, sans-serif;
 }

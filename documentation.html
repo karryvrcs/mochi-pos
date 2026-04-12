@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="lang-zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" id="metaDesc" content="摆摊记账使用教程：首次设置、下单、订单与经营统计。" />
+  <title>使用教程 · 摆摊记账</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="icon.webp" type="image/webp" />
+</head>
+<body class="doc-page">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html#top">
+        <img src="icon.webp" alt="" class="brand-icon" width="40" height="40" />
+        <span class="brand-text">
+          <span data-lang="zh">摆摊记账</span>
+          <span data-lang="en">Mochi POS</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html#intro" data-lang="zh">产品介绍</a>
+        <a href="index.html#intro" data-lang="en">Product</a>
+        <a href="index.html#highlights" data-lang="zh">核心亮点</a>
+        <a href="index.html#highlights" data-lang="en">Highlights</a>
+        <a href="documentation.html" class="nav-current" data-lang="zh">使用教程</a>
+        <a href="documentation.html" class="nav-current" data-lang="en">Documentation</a>
+        <a href="index.html#faq" data-lang="zh">常见问题</a>
+        <a href="index.html#faq" data-lang="en">FAQ</a>
+        <a href="index.html#contact" data-lang="zh">联系我们</a>
+        <a href="index.html#contact" data-lang="en">Contact us</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="切换语言">
+          <span data-lang="zh">EN</span>
+          <span data-lang="en">中文</span>
+        </button>
+        <a class="btn btn-primary header-cta" href="https://apps.apple.com/app/id6761111434" target="_blank" rel="noopener noreferrer" data-lang="zh">下载 App</a>
+        <a class="btn btn-primary header-cta" href="https://apps.apple.com/app/id6761111434" target="_blank" rel="noopener noreferrer" data-lang="en">Get the App</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="doc-main" id="top">
+    <div class="wrap doc-layout doc-wrap-wide">
+      <nav id="docToc" class="doc-toc" aria-labelledby="docTocHeading" hidden>
+        <p id="docTocHeading" class="doc-toc-title">
+          <span data-lang="zh">目录</span>
+          <span data-lang="en">On this page</span>
+        </p>
+        <ol id="docTocList" class="doc-toc-list"></ol>
+      </nav>
+      <div class="doc-body">
+        <p class="doc-back reveal">
+          <a href="index.html" data-lang="zh">← 返回首页</a>
+          <a href="index.html" data-lang="en">← Back to home</a>
+        </p>
+        <div id="docLoading" class="doc-loading" role="status" aria-live="polite">
+          <span data-lang="zh">正在加载教程…</span>
+          <span data-lang="en">Loading documentation…</span>
+        </div>
+        <p id="docError" class="doc-error" hidden>
+          <span data-lang="zh">无法加载教程内容。请用 HTTP 访问本站（例如部署到 GitHub Pages 后通过站点地址打开，或本地运行 <code>python3 -m http.server</code>）。<code>file://</code> 直接打开时浏览器会禁止读取本地文件。</span>
+          <span data-lang="en">Could not load the documentation. Open this site over HTTP (e.g. your GitHub Pages URL, or <code>python3 -m http.server</code> locally). Opening the HTML file directly as <code>file://</code> blocks loading.</span>
+        </p>
+        <article id="docContent" class="doc-content doc-prose" hidden></article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-brand">
+        <span data-lang="zh">摆摊记账</span>
+        <span data-lang="en">Mochi POS</span>
+      </p>
+      <p class="muted">&copy; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" crossorigin="anonymous"></script>
+  <script src="documentation.js"></script>
+</body>
+</html>
