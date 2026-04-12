@@ -72,7 +72,11 @@ Open **Orders** from the tab bar (on iPad / Mac it’s in the top bar). The list
 
 ### Business statistics
 
-Open **Statistics** from the tab bar (top bar on iPad / Mac). Switch between **day / week / month / year**, and tap the date row to jump to a single day or a custom range. You’ll see revenue, order count, trends, category breakdowns, sales reports, and daily sales.
+On **iPhone**: open **Orders** from the bottom tab bar, then tap the **chart icon** in the top-right corner to open Statistics.
+
+On **iPad / Mac**: open **Statistics** from the top menu bar.
+
+Once you’re in Statistics, switch between **day / week / month / year**, and tap the date row to jump to a single day or a custom range. You’ll see revenue, order count, trends, category breakdowns, sales reports, and daily sales.
 
 **Free** users get four core metrics for **today**, **yesterday**, and the **last 7 days**: total sales, total orders, sales report, and daily sales. **Paid** users unlock the full **17 metrics** and **11 charts**, plus **period comparison**.
 

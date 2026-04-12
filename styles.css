@@ -701,34 +701,30 @@ html.lang-zh [data-lang="en"] {
   width: min(1120px, 100% - 40px);
 }
 
-.doc-layout {
+.doc-layout-inner {
   display: grid;
   gap: 1.75rem 2.25rem;
   grid-template-columns: 1fr;
   align-items: start;
 }
 
-@media (max-width: 899px) {
-  .doc-body {
-    order: 1;
-  }
-
-  .doc-toc {
-    order: 2;
-  }
+.doc-article-wrap {
+  min-width: 0;
 }
 
 @media (min-width: 900px) {
-  .doc-layout {
+  .doc-layout-inner {
     grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
   }
+}
 
-  .doc-toc {
-    position: sticky;
-    top: calc(var(--header-h) + 1rem);
-    max-height: calc(100vh - var(--header-h) - 2rem);
-    overflow: auto;
-  }
+.doc-toc {
+  position: sticky;
+  top: calc(var(--header-h) + 0.75rem);
+  z-index: 20;
+  max-height: calc(100vh - var(--header-h) - 1.25rem);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .doc-toc {
@@ -761,15 +757,26 @@ html.lang-zh [data-lang="en"] {
   line-height: 1.35;
 }
 
-.doc-toc-item + .doc-toc-item {
-  margin-top: 0.5rem;
+.doc-toc-item--h2 + .doc-toc-item--h2 {
+  margin-top: 0.65rem;
 }
 
-.doc-toc-item--sub {
-  margin-top: 0.35rem;
-  padding-left: 0.85rem;
-  border-left: 2px solid rgba(37, 99, 235, 0.2);
+.doc-toc-item--h2 > a {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.doc-toc-sub {
+  margin: 0.35rem 0 0.5rem;
+  padding: 0 0 0 0.75rem;
+  list-style: none;
+  border-left: 2px solid rgba(37, 99, 235, 0.18);
+}
+
+.doc-toc-item--h3 {
+  margin-top: 0.3rem;
   font-size: 0.86rem;
+  line-height: 1.4;
 }
 
 .doc-toc-item a {
@@ -777,14 +784,20 @@ html.lang-zh [data-lang="en"] {
   text-decoration: none;
   font-weight: 500;
   display: block;
+  border-radius: 6px;
+  padding: 0.15rem 0.2rem;
+  margin: 0 -0.2rem;
+  transition: color 0.15s, background 0.15s;
 }
 
 .doc-toc-item a:hover {
   color: var(--accent);
 }
 
-.doc-body {
-  min-width: 0;
+.doc-toc-item a.is-active {
+  color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
+  font-weight: 600;
 }
 
 .doc-loading {
@@ -889,6 +902,20 @@ html.lang-zh [data-lang="en"] {
 
 .doc-screenshot-frame.is-iphone .doc-shot--ipad {
   display: none !important;
+}
+
+.doc-screenshot-frame.is-iphone {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5rem 0 0.35rem;
+}
+
+.doc-screenshot-frame.is-iphone .doc-shot--iphone {
+  width: 86%;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 html.lang-en .doc-page {

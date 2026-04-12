@@ -45,28 +45,30 @@
   </header>
 
   <main class="doc-main" id="top">
-    <div class="wrap doc-layout doc-wrap-wide">
-      <nav id="docToc" class="doc-toc" aria-labelledby="docTocHeading" hidden>
-        <p id="docTocHeading" class="doc-toc-title">
-          <span data-lang="zh">目录</span>
-          <span data-lang="en">On this page</span>
-        </p>
-        <ol id="docTocList" class="doc-toc-list"></ol>
-      </nav>
-      <div class="doc-body">
-        <p class="doc-back reveal">
-          <a href="index.html" data-lang="zh">← 返回首页</a>
-          <a href="index.html" data-lang="en">← Back to home</a>
-        </p>
-        <div id="docLoading" class="doc-loading" role="status" aria-live="polite">
-          <span data-lang="zh">正在加载教程…</span>
-          <span data-lang="en">Loading documentation…</span>
+    <div class="wrap doc-wrap-wide">
+      <p class="doc-back reveal">
+        <a href="index.html" data-lang="zh">← 返回首页</a>
+        <a href="index.html" data-lang="en">← Back to home</a>
+      </p>
+      <div class="doc-layout-inner">
+        <nav id="docToc" class="doc-toc" aria-labelledby="docTocHeading" hidden>
+          <p id="docTocHeading" class="doc-toc-title">
+            <span data-lang="zh">目录</span>
+            <span data-lang="en">On this page</span>
+          </p>
+          <ol id="docTocList" class="doc-toc-list"></ol>
+        </nav>
+        <div class="doc-article-wrap">
+          <div id="docLoading" class="doc-loading" role="status" aria-live="polite">
+            <span data-lang="zh">正在加载教程…</span>
+            <span data-lang="en">Loading documentation…</span>
+          </div>
+          <p id="docError" class="doc-error" hidden>
+            <span data-lang="zh">无法加载教程内容。请用 HTTP 访问本站（例如部署到 GitHub Pages 后通过站点地址打开，或本地运行 <code>python3 -m http.server</code>）。<code>file://</code> 直接打开时浏览器会禁止读取本地文件。</span>
+            <span data-lang="en">Could not load the documentation. Open this site over HTTP (e.g. your GitHub Pages URL, or <code>python3 -m http.server</code> locally). Opening the HTML file directly as <code>file://</code> blocks loading.</span>
+          </p>
+          <article id="docContent" class="doc-content doc-prose" hidden></article>
         </div>
-        <p id="docError" class="doc-error" hidden>
-          <span data-lang="zh">无法加载教程内容。请用 HTTP 访问本站（例如部署到 GitHub Pages 后通过站点地址打开，或本地运行 <code>python3 -m http.server</code>）。<code>file://</code> 直接打开时浏览器会禁止读取本地文件。</span>
-          <span data-lang="en">Could not load the documentation. Open this site over HTTP (e.g. your GitHub Pages URL, or <code>python3 -m http.server</code> locally). Opening the HTML file directly as <code>file://</code> blocks loading.</span>
-        </p>
-        <article id="docContent" class="doc-content doc-prose" hidden></article>
       </div>
     </div>
   </main>

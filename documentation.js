@@ -43,8 +43,11 @@
     });
   }
 
+  /** @type {(() => void) | null} */
+  let tocScrollCleanup = null;
+
   /**
-   * 浅色侧栏目录：从正文 h2/h3 生成锚点，兼容 GitHub Pages 静态部署（相对路径）。
+   * 浅色目录：h2 为一级，其下的 h3 嵌套在子列表中；锚点兼容 GitHub Pages。
    */
   function buildToc(article) {
     const tocNav = document.getElementById("docToc");
@@ -57,18 +60,82 @@
       return;
     }
     tocNav.hidden = false;
+
+    let pendingH2Li = null;
+    let currentSubOl = null;
+
     headings.forEach((h, idx) => {
       const id = `doc-toc-${idx}`;
       if (!h.id) h.id = id;
-      const li = document.createElement("li");
-      li.className =
-        h.tagName === "H3" ? "doc-toc-item doc-toc-item--sub" : "doc-toc-item";
+
       const a = document.createElement("a");
       a.href = `#${h.id}`;
       a.textContent = h.textContent.trim();
-      li.appendChild(a);
-      tocList.appendChild(li);
+
+      if (h.tagName === "H2") {
+        const li = document.createElement("li");
+        li.className = "doc-toc-item doc-toc-item--h2";
+        li.appendChild(a);
+        tocList.appendChild(li);
+        pendingH2Li = li;
+        currentSubOl = null;
+      } else {
+        if (pendingH2Li && !currentSubOl) {
+          currentSubOl = document.createElement("ol");
+          currentSubOl.className = "doc-toc-sub";
+          pendingH2Li.appendChild(currentSubOl);
+        }
+        const li = document.createElement("li");
+        li.className = "doc-toc-item doc-toc-item--h3";
+        li.appendChild(a);
+        if (currentSubOl) {
+          currentSubOl.appendChild(li);
+        } else {
+          tocList.appendChild(li);
+        }
+      }
     });
+  }
+
+  function setupTocScrollSpy(article) {
+    if (tocScrollCleanup) {
+      tocScrollCleanup();
+      tocScrollCleanup = null;
+    }
+    const tocNav = document.getElementById("docToc");
+    if (!tocNav) return;
+    const links = tocNav.querySelectorAll("a[href^='#']");
+    const headings = article.querySelectorAll("h2, h3");
+    if (headings.length === 0 || links.length === 0) return;
+
+    function headerOffset() {
+      const h = getComputedStyle(document.documentElement)
+        .getPropertyValue("--header-h")
+        .trim();
+      return parseFloat(h) || 64;
+    }
+
+    function updateActive() {
+      const band = headerOffset() + 8;
+      let currentId = headings[0].id;
+      headings.forEach((h) => {
+        const rect = h.getBoundingClientRect();
+        if (rect.top <= band) currentId = h.id;
+      });
+      links.forEach((a) => {
+        const id = a.getAttribute("href").slice(1);
+        a.classList.toggle("is-active", id === currentId);
+      });
+    }
+
+    updateActive();
+    window.addEventListener("scroll", updateActive, { passive: true });
+    window.addEventListener("resize", updateActive, { passive: true });
+
+    tocScrollCleanup = () => {
+      window.removeEventListener("scroll", updateActive);
+      window.removeEventListener("resize", updateActive);
+    };
   }
 
   async function loadDoc() {
@@ -106,6 +173,7 @@
       content.hidden = false;
       if (loading) loading.hidden = true;
       buildToc(content);
+      setupTocScrollSpy(content);
       applyDocDevice();
       bindDocDeviceButtons(content);
     } catch (_) {
