@@ -3,9 +3,9 @@
   const storageKey = "pos-site-lang";
   const deviceKey = "pos-site-device";
   const META_ZH =
-    "摆摊记账使用教程：首次设置、下单、订单与经营统计。";
+    "摆摊记账使用教程：首次设置、下单、订单、商品管理与经营统计。";
   const META_EN =
-    "Mochi POS documentation: setup, checkout, orders, and business statistics.";
+    "Mochi POS documentation: setup, checkout, orders, product management, and business statistics.";
 
   /** @type {"zh" | "en"} */
   let currentLang = "en";
@@ -106,8 +106,15 @@
       return parseFloat(h) || 64;
     }
 
+    /** 与 .doc-prose h2/h3 的 scroll-margin-top（header + 0.75rem）一致，避免锚点滚动后目录仍高亮上一节 */
+    function docScrollBandPx() {
+      const rem =
+        parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      return headerOffset() + 0.75 * rem;
+    }
+
     function updateActive() {
-      const band = headerOffset() + 8;
+      const band = docScrollBandPx();
       let currentId = headings[0].id;
       headings.forEach((h) => {
         const rect = h.getBoundingClientRect();
